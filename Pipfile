@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyomo = "==6.6.1"
+pandas = "==1.5.3"
+highspy = "==1.5.3"
+
+[dev-packages]
+pytest = "*"
+notebook = "==6.5.4"
+
+[requires]
+python_version = "3.10"
