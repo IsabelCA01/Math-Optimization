@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip
 RUN pip install flask==2.1.*
 
 # install app
-COPY hello.py /
+COPY helloworld.py /
 
 # final configuration
 ENV FLASK_APP=hello
