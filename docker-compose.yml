@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  run-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 opt-101.py
+
