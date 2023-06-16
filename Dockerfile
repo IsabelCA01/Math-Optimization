@@ -17,5 +17,5 @@ RUN pipenv install --deploy --system
 
 COPY . .
 
-CMD ["python3", "opt-101.py"]
+CMD ["python3", "model.py"]
 

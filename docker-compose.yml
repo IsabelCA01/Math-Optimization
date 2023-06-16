@@ -5,5 +5,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: python3 opt-101.py
+    command: uvicorn app:app --reload --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+
+#Para correr el docker-compose:
+#docker compose -p opt-app -f docjer-compose.tml up --build
 
