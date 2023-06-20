@@ -12,5 +12,5 @@ services:
       - 8000:8000
 
 #Para correr el docker-compose:
-#docker compose -p opt-app -f docjer-compose.tml up --build
+#docker compose -p opt-app -f docker-compose.yml up --build
 

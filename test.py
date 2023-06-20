@@ -28,3 +28,5 @@ data=dict(
         },
     )
 
+
+afn: dict[tuple[str, str], float]
