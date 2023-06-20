@@ -12,14 +12,6 @@ app = FastAPI(
 @app.post("/solve-model")
 def solve_model(food_requirements: FoodRequirements) -> dict[str, str]:
     data=dict(
-        afn = {
-            ("Cheeseburger", "Calories"): 510,
-            ("Cheeseburger", "Protein"): 34,
-            ("Cheeseburger", "Fat"): 26,
-            ("Fries", "Calories"): 220,
-            ("Fries", "Protein"): 4,
-            ("Fries", "Fat"): 19
-        },
     )
 
     data["FOODS"] = food_requirements.foods
@@ -29,6 +21,7 @@ def solve_model(food_requirements: FoodRequirements) -> dict[str, str]:
     data["Nmaxn"] = food_requirements.Nmaxn
     data["Vmax"] = food_requirements.Vmax
     data["Vf"] = food_requirements.Vf
+    data["afn"] = food_requirements.afn
     
     return create_and_solve_model(data=data)
 

@@ -8,6 +8,7 @@ class FoodRequirements(BaseModel):
     Nmaxn: dict[str, float]
     Vmax: float
     Vf: dict[str, float]
+    afn: dict[str, float]
     
 
     @validator("cf")
@@ -33,4 +34,21 @@ class FoodRequirements(BaseModel):
         if not all([k in values["foods"] for k in Vf.keys()]):
             raise ValueError("Food in Vf is not valid")
         return Vf
+    
+    @validator("afn")
+    def validate_afn2(cls, afn, values):
+        for k in afn.keys():
+            if not "," in k:
+                raise ValueError("afn key is not valid")
+            return afn
+    
+        
+    @validator("afn")
+    def validate_afn(cls, afn, values):
+        af = {
+            tuple([text.strip() for text in k.split(",")]):v for k,v in afn.items()
+        }
+        return af
+
+
     
